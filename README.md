@@ -1,4 +1,4 @@
-# TITLE OF THE PAPER
+# Adapting the Largest Sentinel-2 and NAIP Dataset for Single-Input Super-Resolution with Near-Infrared Band Integration
 
 This work utilizes the S2_NAIP dataset and incorporates code segments from the paper *Zooming Out on Zooming In: Advancing Super-Resolution for Remote Sensing* ([link](https://github.com/allenai/satlas-super-resolution)). We gratefully acknowledge their contributions.
 
