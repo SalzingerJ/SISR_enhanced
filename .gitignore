@@ -9,3 +9,6 @@ sen2naip_eval/sen2naip_meta_old.json.gz
 sen2naip_eval/.env
 .Trash-1000/
 sen2naip_eval/.ipynb_checkpoints/
+
+# Mac specific
+.DS_Store
