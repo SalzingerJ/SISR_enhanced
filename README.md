@@ -1,6 +1,6 @@
 # Better Data for Satellite Super Resolution
 
-This work utilizes the S2_NAIP dataset from the paper _Zooming Out on Zooming In: Advancing Super-Resolution for Remote Sensing_ ([link](https://github.com/allenai/satlas-super-resolution)). We gratefully acknowledge their contributions.
+This work utilizes the S2*NAIP dataset from the paper \_Zooming Out on Zooming In: Advancing Super-Resolution for Remote Sensing* ([link](https://github.com/allenai/satlas-super-resolution)). We gratefully acknowledge their contributions.
 
 This repository contains code to ensure the reproducibility of the experiments described in our paper, including:
 
@@ -16,9 +16,9 @@ This repository contains code to ensure the reproducibility of the experiments d
 1. Create and activate a conda environment with Python 3.9:
 
 ### Git clone the Git repository
+
 ```bash
 git clone https://github.com/SalzingerJ/SISR_enhanced.git
-pip install -r requirements.txt
 cd repository
 docker compose up --build
 ```
