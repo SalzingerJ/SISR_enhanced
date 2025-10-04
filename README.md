@@ -1,4 +1,4 @@
-# Adapting the Largest Sentinel-2 and NAIP Dataset for Single-Input Super-Resolution with Near-Infrared Band Integration
+# Better Data for Satellite Super Resolution
 
 This work utilizes the S2_NAIP dataset from the paper _Zooming Out on Zooming In: Advancing Super-Resolution for Remote Sensing_ ([link](https://github.com/allenai/satlas-super-resolution)). We gratefully acknowledge their contributions.
 
@@ -15,12 +15,12 @@ This repository contains code to ensure the reproducibility of the experiments d
 
 1. Create and activate a conda environment with Python 3.9:
 
+### Git clone the Git repository
 ```bash
-conda create --name <env_name> python=3.9
-conda activate <env_name>
+git clone https://github.com/SalzingerJ/SISR_enhanced.git
 pip install -r requirements.txt
-conda install gdal
-git clone https://gitlab-intern.ait.ac.at/as/general/playground/satlas_test.git
+cd repository
+docker compose up --build
 ```
 
 ## Dataset creation

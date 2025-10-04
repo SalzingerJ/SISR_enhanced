@@ -3,8 +3,6 @@ FROM nvidia/cuda:12.4.1-devel-ubuntu22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Berlin
 
-ARG UID=$UID
-
 # Install necessary packages and Python 3.11
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -33,6 +31,24 @@ RUN add-apt-repository ppa:deadsnakes/ppa -y && \
     python3.9 \
     python3.9-distutils \
     python3.9-venv
+
+# Install Python 3.9 and dev headers
+RUN add-apt-repository ppa:deadsnakes/ppa -y && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+    python3.9 \
+    python3.9-distutils \
+    python3.9-venv \
+    python3.9-dev \
+    build-essential \
+    libgdal-dev \
+    gdal-bin \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set environment variables for GDAL
+ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
+ENV C_INCLUDE_PATH=/usr/include/gdal
+ENV GDAL_VERSION=3.6.4
 
 # Install pip for Python 3.9
 RUN wget https://bootstrap.pypa.io/get-pip.py && \
