@@ -19,9 +19,5 @@ services:
       #needed for x-window-forwarding
       # execute this once per host system startup: xhost +local:docker
       - /tmp/.X11-unix:/tmp/.X11-unix
-      # Data set read volume
-      - /projects/edf/eos/:/workspace/eos:ro
-      # Write custom downloaded data
-      - /projects/edf/eos/naip_dwnl:/workspace/naip_dwnl
     #pwd: csync
     command: /bin/bash -c "jupyter notebook --ip=0.0.0.0 --port=${PORT0} --allow-root --no-browser --NotebookApp.password='sha1:26c148c4c3d7:f3fb45584ca8f933451d8e05e6861b54f3fe7822'"
