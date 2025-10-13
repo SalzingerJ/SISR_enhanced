@@ -21,6 +21,5 @@ services:
       # execute this once per host system startup: xhost +local:docker
       - /tmp/.X11-unix:/tmp/.X11-unix
       # Data volume
-      - ../data:/workspace/data
-    #pwd: csync
+      - ${SATLAS_DATA_PATH}:/workspace/data
     command: /bin/bash -c "sleep infinity"

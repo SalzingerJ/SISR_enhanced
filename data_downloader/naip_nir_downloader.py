@@ -137,7 +137,11 @@ def main_callable(arg0, tqdm_ver=tqdm, retry_on_err=3, sleep_on_err=5.0):
     parser.add_argument('--trg', type=str, default=None,
                         help="Target NAIP NIR data output root directory; default: put into src root dir")
     args = parser.parse_args(arg0)
-    all_rgb_paths = sorted(glob.glob(args.src_set+'/naip/**/rgb.png', recursive=True))
+    if os.path.exists(args.src_set+'/val_set/naip/'): #actual root dir; convert both val_set and train_urban_set
+        all_rgb_paths = sorted(glob.glob(args.src_set+'/val_set/naip/**/rgb.png', recursive=True))
+        all_rgb_paths += sorted(glob.glob(args.src_set+'/train_urban_set/naip/**/rgb.png', recursive=True))
+    else:
+        all_rgb_paths = sorted(glob.glob(args.src_set+'/naip/**/rgb.png', recursive=True))
     naip_coll = get_stac_coll()
     for p in tqdm_ver(all_rgb_paths, total=len(all_rgb_paths), desc="Adding NAIP NIR data"):
         try:
