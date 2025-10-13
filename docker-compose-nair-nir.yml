@@ -7,4 +7,4 @@ services:
     extends:
       file: docker-compose.yml
       service: satlas
-    command: /bin/bash -c "python3.9 /workspace/data_downloader/naip_nir_downloader.py --src /workspace/data/val_set --trg /workspace/data_tmp/"
+    command: /bin/bash -c "python3.9 /workspace/data_downloader/naip_nir_downloader.py --src /workspace/data/"
