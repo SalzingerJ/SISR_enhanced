@@ -1,5 +1,12 @@
 # Better Data for Satellite Super Resolution
 
+This is the repo with support code for the paper
+
+**Better Data for Satellite Super Resolution** <br>
+NeurIPS 2025 [Workshop on Reliable ML from Unreliable Data](https://reliablemlworkshop.github.io/) <br>
+Miguel Castells, Jules Salzinger, and Oliver Zendel <br>
+[Austrian Institute of Technology Gmbh](https://www.ait.ac.at/) <br>
+
 This work utilizes the S2*NAIP dataset from the paper \_Zooming Out on Zooming In: Advancing Super-Resolution for Remote Sensing* ([link](https://github.com/allenai/satlas-super-resolution)). We gratefully acknowledge their contributions.
 
 This repository contains code to ensure the reproducibility of the experiments described in our paper, including:
@@ -27,10 +34,8 @@ docker compose up --build
 
 ### Step 1 : Download data
 
-- Download the S2-NAIP dataset from the satlas superresolution repository.
-- Download the Near-Infrared (NIR) bands of NAIP separately.
-
-#### (TODO: How to download the NIR band of NAIP ?)
+- Download the [S2-NAIP dataset](https://github.com/allenai/satlas-super-resolution/?tab=readme-ov-file#data) from the satlas superresolution repository.
+- Execute our script [TODO] to download the NAIP Near-Infrared (NIR) bands data separately.
 
 ### Step 2 : Pre-filter datapoints
 
