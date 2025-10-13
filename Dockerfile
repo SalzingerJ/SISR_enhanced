@@ -1,5 +1,6 @@
 FROM nvidia/cuda:12.4.1-devel-ubuntu22.04
 
+ARG UID
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Berlin
 
@@ -61,7 +62,9 @@ COPY requirements.txt /workspace/requirements.txt
 # Install Python packages from requirements.txt using Python 3.9
 RUN python3.9 -m pip install --no-cache-dir -r /workspace/requirements.txt
 
-# User setup
+RUN python3.9 -m pip install --no-cache-dir install notebook
+
+# User setup (this allows writing to mapped volumes as the host user UID)
 RUN apt-get update && apt-get install -y sudo && \
     adduser --disabled-password --gecos "" udocker && \
     adduser udocker sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers

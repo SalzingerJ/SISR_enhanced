@@ -10,7 +10,8 @@ services:
         UID: ${UID}
     shm_size: '8gb'
     cpuset: ${DOCKER_LIMIT_CPU_IDS}
-    network_mode: host
+    ports:
+      - "${IPYNB_PORT}:8889" #only needed for jupyter notebooks
     volumes:
       # this is the local directory
       - ./:/workspace/

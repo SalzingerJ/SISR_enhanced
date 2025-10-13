@@ -1,7 +1,7 @@
 version: '2.2'
 services:
   satlas:
-    container_name: satlas1_${UID}
+    container_name: satlas_ddownl_${UID}
     user: ${UID}
     env_file: .env
     build:
@@ -10,13 +10,14 @@ services:
         UID: ${UID}
     shm_size: '8gb'
     cpuset: ${DOCKER_LIMIT_CPU_IDS}
-    network_mode: host
+    ports:
+      - "${IPYNB_PORT}:8889" #only needed for jupyter notebooks
     volumes:
       # this is the local directory
       - ../:/workspace/
       # keep torch/huggingface temp files from re-downloading every time
       - ../torch_tmp:/home/udocker/.cache/
       # Data volume
-      - ../../data:/workspace/data
+      - ${SATLAS_DATA_PATH}:/workspace/data
     #pwd: csync
-    command: /bin/bash -c "jupyter notebook --ip=0.0.0.0 --port=${PORT0} --allow-root --no-browser --NotebookApp.password='sha1:26c148c4c3d7:f3fb45584ca8f933451d8e05e6861b54f3fe7822'"
+    command: /bin/bash -c "jupyter notebook --ip=0.0.0.0 --port=8889 --allow-root --no-browser --NotebookApp.password='sha1:26c148c4c3d7:f3fb45584ca8f933451d8e05e6861b54f3fe7822'"
