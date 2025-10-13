@@ -30,7 +30,9 @@ This repository contains code to ensure the reproducibility of the experiments d
 
 - Download the [S2-NAIP dataset](https://github.com/allenai/satlas-super-resolution/?tab=readme-ov-file#data) from the satlas superresolution repository (all four parts of the train_urban_set and val_set).
 - Extract archives so both ./train_urban_set and ./val_set are in the same root satlas data folder (set SATLAS_DATA_PATH to this folder in your .env)
-- Execute our script [TODO] to download the NAIP Near-Infrared (NIR) bands data separately.
+- Build and execute the downloader using: <br>
+  ```docker compose -f docker-compose-nair-nir.yml build``` and ```docker compose -f docker-compose-nair-nir.yml run satlas_naip_nir``` <br>
+  Note: the downloader takes approx. 500h to complete the 1.1 million tiles due to bandwidth restrictions from MS planetary computer
 
 ### Step 2 : Pre-filter datapoints
 
