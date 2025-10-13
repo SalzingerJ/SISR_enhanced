@@ -2,15 +2,17 @@
 preprocess/plots/
 __pycache__/
 pipeline_dataset/.ipynb_checkpoints/
-sen2naip_eval/*.json
 ssr/data/.ipynb_checkpoints/
-test_sen2naip/
-sen2naip_eval/sen2naip_meta_old.json.gz
-sen2naip_eval/.env
 .Trash-1000/
-sen2naip_eval/.ipynb_checkpoints/
+data_downloader/.ipynb_checkpoints/
+.ipynb_checkpoints/
+.tmp_naip_nir.tif
+data_downloader/.tmp_naip_nir.tif
+data/
 .env
 
 # Mac specific
 .DS_Store
+
+
 

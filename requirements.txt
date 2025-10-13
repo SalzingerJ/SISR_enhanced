@@ -23,3 +23,5 @@ torchmetrics
 pystac_client
 planetary_computer
 mercantile
+rasterio
+pyproj
