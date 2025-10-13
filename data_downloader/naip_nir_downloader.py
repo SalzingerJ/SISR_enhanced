@@ -132,7 +132,7 @@ def main_callable(arg0, tqdm_ver=tqdm, retry_on_err=3, sleep_on_err=5.0):
     # parser setup
     parser = argparse.ArgumentParser(description="Params")
     parser.add_argument('--src_set', type=str, 
-                        default="/workspace/data/satlas/val_set",
+                        default="/workspace/data/val_set",
                         help="Src SATLAS set dir (one above the root dir)")
     parser.add_argument('--trg', type=str, default=None,
                         help="Target NAIP NIR data output root directory; default: put into src root dir")
