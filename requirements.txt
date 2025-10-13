@@ -20,3 +20,6 @@ debugpy
 matplotlib
 sentencepiece
 torchmetrics
+pystac_client
+planetary_computer
+mercantile
