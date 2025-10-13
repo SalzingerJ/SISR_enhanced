@@ -20,21 +20,16 @@ This repository contains code to ensure the reproducibility of the experiments d
 
 ## Installation
 
-1. Create and activate a conda environment with Python 3.9:
-
-### Git clone the Git repository
-
-```bash
-git clone https://github.com/SalzingerJ/SISR_enhanced.git
-cd repository
-docker compose up --build
-```
+1. Clone this repo
+2. Create a .env file (see template.env) and put it in the repo root folder
+3. Build the Dockerfile using ```docker compose build ```
 
 ## Dataset creation
 
 ### Step 1 : Download data
 
-- Download the [S2-NAIP dataset](https://github.com/allenai/satlas-super-resolution/?tab=readme-ov-file#data) from the satlas superresolution repository.
+- Download the [S2-NAIP dataset](https://github.com/allenai/satlas-super-resolution/?tab=readme-ov-file#data) from the satlas superresolution repository (all four parts of the train_urban_set and val_set).
+- Extract archives so both ./train_urban_set and ./val_set are in the same root satlas data folder (set SATLAS_DATA_PATH to this folder in your .env)
 - Execute our script [TODO] to download the NAIP Near-Infrared (NIR) bands data separately.
 
 ### Step 2 : Pre-filter datapoints
